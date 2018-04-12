@@ -1,0 +1,1 @@
+ssh root@localhost -p 8022 -i ~/.ssh/gitlab.com_rsa -L 8545:public-node:8545

@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  poa-node:
+    build:
+      context: ./poa-node
+    volumes:
+      - ./shared:/root/shared
+
+  public-node:
+    build:
+      context: ./public-node
+    volumes:
+      - ./shared:/root/shared
+    depends_on:
+      - poa-node
+
+  ssh-node:
+    build:
+      context: ./ssh-node
+    volumes:
+      - ./shared:/root/shared
+    ports:
+      - "8022:22"
