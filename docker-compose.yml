@@ -22,3 +22,28 @@ services:
       - ./shared:/root/shared
     ports:
       - "8022:22"
+
+  tricky:
+    build:
+      context: ./tricky
+    volumes:
+      - ./shared:/root/shared
+    depends_on:
+      - poa-node
+    cap_add:
+      - SYS_PTRACE
+
+#  babyeth:
+#    build:
+#      context: ./babyeth
+#    volumes:
+#      - ./shared:/root/shared
+#    depends_on:
+#      - poa-node
+
+  faucet:
+    build:
+      context: ./faucet
+    depends_on:
+      - public-node
+

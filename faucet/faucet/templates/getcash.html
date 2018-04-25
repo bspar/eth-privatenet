@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="form-faucet">
+        <form class="form-faucet" action="/req100" method="POST">
+            <i class="mb-4" data-feather="dollar-sign" width="72" height="72"></i>
+            <p>Address: <input class="p font-weight-normal" name="address"></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get 100 ETH (only once)</button>
+        </form>
+        <form class="form-faucet" action="/req" method="POST">
+            <p>Address: <input class="p font-weight-normal" name="address"></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get 1 ETH (every 5 minutes)</button>
+        </form>
+        <p class="mt-1"><i>Open your browser's dev console for log messages</i></p>
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+        <script src="/static/web3.min.js"></script>
+        <script src="/static/c3tf.js"></script>
+{% endblock %}

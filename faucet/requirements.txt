@@ -1,0 +1,5 @@
+web3==3.16.5
+eth-utils==0.8.1
+flask==0.12.2
+flask-sqlalchemy==2.3.2
+flask-migrate==2.1.1

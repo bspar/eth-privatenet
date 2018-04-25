@@ -2,7 +2,7 @@
 
 sleep 1
 geth --datadir /root/.ethereum/c3tfnet --networkid 133742069 init /root/shared/c3tfnet.json
-geth --datadir /root/.ethereum/c3tfnet --networkid 133742069 --nodiscover --rpc --rpcport 8545 --rpcaddr 0.0.0.0 --rpccorsdomain * --rpcapi admin,eth,net,personal,web3,txpool &
+geth --datadir /root/.ethereum/c3tfnet --networkid 133742069 --nodiscover --rpc --rpcport 8545 --rpcaddr 0.0.0.0 --rpccorsdomain "*" --rpcvhosts "*" --rpcapi admin,eth,net,personal,web3,txpool &
 
 sleep 3
 NODEID=$(cat /root/shared/poa-nodeid | tr -d '\n')
